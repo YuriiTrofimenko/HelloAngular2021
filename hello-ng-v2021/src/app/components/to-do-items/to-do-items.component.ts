@@ -8,11 +8,23 @@ import {ToDoItem} from '../../models/ToDoItem'
 })
 export class ToDoItemsComponent implements OnInit {
 
-  toDoItem: ToDoItem = {
-    id: 1,
-    isComplete: false,
-    name: 'Bill Gates'
-  }
+  toDoItems: ToDoItem[] = [
+    {
+      id: 1,
+      isComplete: false,
+      name: 'Выполнить ДЗ №2'
+    },
+    {
+      id: 2,
+      isComplete: false,
+      name: 'Купить хлеб'
+    },
+    {
+      id: 3,
+      isComplete: false,
+      name: 'Зарядить телефон'
+    }
+  ]
 
   constructor() { }
 
