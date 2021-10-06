@@ -9,7 +9,7 @@ import {ToDoItem} from '../../models/ToDoItem'
 export class ToDoItemsComponent implements OnInit {
 
   toDoItems: ToDoItem[] = [
-    {
+    /*{
       id: 1,
       isComplete: false,
       name: 'Выполнить ДЗ №2'
@@ -17,13 +17,28 @@ export class ToDoItemsComponent implements OnInit {
     {
       id: 2,
       isComplete: false,
-      name: 'Купить хлеб'
+      name: 'Купить хлеб. Dhbdjnfknk dhkgmfnkgm dgbnfnfg gfnfmlhmlg,l,hjmlj,nl ngmhlmnlh. Hcnkdsvmksvm fnfkbnkdfbn.'
     },
     {
       id: 3,
       isComplete: false,
       name: 'Зарядить телефон'
-    }
+    },
+    {
+      id: 4,
+      isComplete: true,
+      name: 'Task #4. qqqqqqqqqqqqqqz'
+    },
+    {
+      id: 5,
+      isComplete: true,
+      name: 'Task #5. qqqqqqqqqqqqqqzz'
+    },
+    {
+      id: 6,
+      isComplete: false,
+      name: 'Task #6. qqqqqqqqqqqqqqzzz'
+    }*/
   ]
 
   constructor() { }

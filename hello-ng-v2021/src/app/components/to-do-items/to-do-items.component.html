@@ -1,10 +1,18 @@
 <div>
-  <div *ngFor="let toDoItem of toDoItems">
-    <h2>{{toDoItem.name}} Details</h2>
-    <div><span>id: </span>{{toDoItem.id}}</div>
-    <div><span>name: </span>{{toDoItem.name}}</div>
-    <div>
-      <span>is complete: </span>{{toDoItem.isComplete}}
+  <strong *ngIf="toDoItems.length > 0">
+    {{toDoItems.length}} item{{toDoItems.length == 1 ? '' : 's'}}
+  </strong>
+  <div *ngIf="toDoItems.length > 0; else no_content">
+    <div *ngFor="let toDoItem of toDoItems">
+      <h2>{{toDoItem.name | slice : 0 : 25}}{{toDoItem.name.length > 25 ? '...' : ''}} Details</h2>
+      <div><span>id: </span>{{toDoItem.id}}</div>
+      <div><span>name: </span>{{toDoItem.name | uppercase}}</div>
+      <div>
+        <span>is complete: </span>{{toDoItem.isComplete}}
+      </div>
     </div>
   </div>
+  <ng-template #no_content>
+    <div>No Tasks Yet...</div>
+  </ng-template>
 </div>
