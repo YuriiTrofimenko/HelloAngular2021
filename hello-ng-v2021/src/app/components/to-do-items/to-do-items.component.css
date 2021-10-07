@@ -1,0 +1,41 @@
+.items {
+  /* list-style-type: none; */
+  padding: 0;
+  width: fit-content;
+}
+.items_item {
+  cursor: pointer;
+  background-color: #EEE;
+  margin: .5em 0;
+  padding: .3em;
+  height: 250px;
+  border-radius: 4px;
+}
+.items_item:hover {
+  color: #607D8B;
+  background-color: #DDD;
+}
+.items_item.selected {
+  background-color: rgb(143, 187, 130);
+  color: white;
+}
+.items_item.selected:hover {
+  background-color: rgb(118, 155, 106);
+}
+.items_item .open {
+  color: crimson;
+}
+.items_item .completed {
+  color: darkseagreen;
+}
+.item-details {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 600px;
+  height: 250px;
+  background-color: #DDD;
+}
+.todo-count{
+  font-size: 0.8rem;
+}

@@ -8,8 +8,10 @@ import {ToDoItem} from '../../models/ToDoItem'
 })
 export class ToDoItemsComponent implements OnInit {
 
+  selectedItem: ToDoItem = null
+
   toDoItems: ToDoItem[] = [
-    /*{
+    {
       id: 1,
       isComplete: false,
       name: 'Выполнить ДЗ №2'
@@ -38,12 +40,16 @@ export class ToDoItemsComponent implements OnInit {
       id: 6,
       isComplete: false,
       name: 'Task #6. qqqqqqqqqqqqqqzzz'
-    }*/
+    }
   ]
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  onItemClick (toDoItem: ToDoItem) {
+    this.selectedItem = toDoItem
   }
 
 }
