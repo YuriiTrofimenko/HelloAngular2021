@@ -1,5 +1,8 @@
+/* ToDoItem model (Record / Data Class) */
 export class ToDoItem {
-  id: number
-  name: string
-  isComplete: boolean
+  constructor(
+    public id: number,
+    public name: string,
+    public isComplete: boolean
+  ) {}
 }

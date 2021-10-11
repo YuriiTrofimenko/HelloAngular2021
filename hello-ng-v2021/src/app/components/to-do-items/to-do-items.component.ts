@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core'
 import {ToDoItem} from '../../models/ToDoItem'
-import { ITEMS } from '../../items'
+import {TodoItemsService} from "../../services/todo-items.service";
 
 @Component({
   selector: 'app-to-do-items',
@@ -11,11 +11,12 @@ export class ToDoItemsComponent implements OnInit {
 
   selectedItem: ToDoItem = null
 
-  toDoItems: ToDoItem[] = ITEMS
+  toDoItems: ToDoItem[] = []
 
-  constructor() { }
+  constructor(private service: TodoItemsService) { }
 
   ngOnInit() {
+    this.toDoItems.push(...this.service.getItems())
   }
 
   onItemClick (toDoItem: ToDoItem) {
