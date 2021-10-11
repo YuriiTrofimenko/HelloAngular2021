@@ -16,7 +16,19 @@ export class ToDoItemsComponent implements OnInit {
   constructor(private service: TodoItemsService) { }
 
   ngOnInit() {
-    this.toDoItems.push(...this.service.getItems())
+    // this.toDoItems.push(...this.service.getItems())
+    this.service.getRemoteItems()
+      .subscribe(
+        data => {
+          this.toDoItems.push(
+            ...(data.map(
+              todoItem => new ToDoItem(todoItem.id, todoItem.title, todoItem.completed)
+            ))
+          )
+        },
+        error => {
+          console.log(error);
+        });
   }
 
   onItemClick (toDoItem: ToDoItem) {
