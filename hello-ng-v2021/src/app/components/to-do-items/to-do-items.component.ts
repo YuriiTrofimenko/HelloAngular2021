@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core'
 import {ToDoItem} from '../../models/ToDoItem'
+import { ITEMS } from '../../items'
 
 @Component({
   selector: 'app-to-do-items',
@@ -10,38 +11,7 @@ export class ToDoItemsComponent implements OnInit {
 
   selectedItem: ToDoItem = null
 
-  toDoItems: ToDoItem[] = [
-    {
-      id: 1,
-      isComplete: false,
-      name: 'Выполнить ДЗ №2'
-    },
-    {
-      id: 2,
-      isComplete: false,
-      name: 'Купить хлеб. Dhbdjnfknk dhkgmfnkgm dgbnfnfg gfnfmlhmlg,l,hjmlj,nl ngmhlmnlh. Hcnkdsvmksvm fnfkbnkdfbn.'
-    },
-    {
-      id: 3,
-      isComplete: false,
-      name: 'Зарядить телефон'
-    },
-    {
-      id: 4,
-      isComplete: true,
-      name: 'Task #4. qqqqqqqqqqqqqqz'
-    },
-    {
-      id: 5,
-      isComplete: true,
-      name: 'Task #5. qqqqqqqqqqqqqqzz'
-    },
-    {
-      id: 6,
-      isComplete: false,
-      name: 'Task #6. qqqqqqqqqqqqqqzzz'
-    }
-  ]
+  toDoItems: ToDoItem[] = ITEMS
 
   constructor() { }
 

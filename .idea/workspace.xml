@@ -1,10 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="91bec541-10b7-4aa0-aa40-175ab17fb00c" name="Default Changelist" comment="else using ng-template">
+    <list default="true" id="91bec541-10b7-4aa0-aa40-175ab17fb00c" name="Default Changelist" comment="ngModel (two-way binding)">
+      <change afterPath="$PROJECT_DIR$/hello-ng-v2021/src/app/items.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hello-ng-v2021/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/hello-ng-v2021/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hello-ng-v2021/src/app/components/to-do-items/to-do-items.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/hello-ng-v2021/src/app/components/to-do-items/to-do-items.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hello-ng-v2021/src/app/components/to-do-items/to-do-items.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/hello-ng-v2021/src/app/components/to-do-items/to-do-items.component.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +69,7 @@
       <workItem from="1633364848430" duration="4538000" />
       <workItem from="1633531693412" duration="11273000" />
       <workItem from="1633618654303" duration="7952000" />
-      <workItem from="1633964585244" duration="2122000" />
+      <workItem from="1633964585244" duration="2872000" />
     </task>
     <task id="LOCAL-00001" summary="init n the first custom component ToDoItemsComponent">
       <created>1633536105745</created>
@@ -74,17 +92,36 @@
       <option name="project" value="LOCAL" />
       <updated>1633543218270</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="ngModel (two-way binding)">
+      <created>1633966738046</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1633966738047</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="init n the first custom component ToDoItemsComponent" />
     <MESSAGE value="*ngFor demo" />
     <MESSAGE value="else using ng-template" />
-    <option name="LAST_COMMIT_MESSAGE" value="else using ng-template" />
+    <MESSAGE value="ngModel (two-way binding)" />
+    <option name="LAST_COMMIT_MESSAGE" value="ngModel (two-way binding)" />
   </component>
   <component name="WindowStateProjectService">
     <state x="804" y="272" width="374" height="569" key="#com.intellij.ide.util.MemberChooser" timestamp="1633535685867">
