@@ -19,15 +19,13 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="91bec541-10b7-4aa0-aa40-175ab17fb00c" name="Default Changelist" comment="DI of TodoItemsService (get items from ts module)">
-      <change afterPath="$PROJECT_DIR$/hello-ng-v2021/.env.example" afterDir="false" />
+    <list default="true" id="91bec541-10b7-4aa0-aa40-175ab17fb00c" name="Default Changelist" comment="HttpClient in TodoItemsService, rxjs subscriber in TodoItemsComponents (get items from the remote fake WEB API)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hello-ng-v2021/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/hello-ng-v2021/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hello-ng-v2021/src/app/components/to-do-items/to-do-items.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/hello-ng-v2021/src/app/components/to-do-items/to-do-items.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hello-ng-v2021/src/app/components/to-do-items/to-do-items.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/hello-ng-v2021/src/app/components/to-do-items/to-do-items.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hello-ng-v2021/src/app/services/todo-items.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/hello-ng-v2021/src/app/services/todo-items.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hello-ng-v2021/src/environments/environment.ts" beforeDir="false" afterPath="$PROJECT_DIR$/hello-ng-v2021/src/environments/environment.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hello-ng-v2021/src/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/hello-ng-v2021/src/styles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hello-ng-v2021/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/hello-ng-v2021/tsconfig.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hello-ng-v2021/tslint.json" beforeDir="false" afterPath="$PROJECT_DIR$/hello-ng-v2021/tslint.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,7 +77,8 @@
       <workItem from="1633364848430" duration="4538000" />
       <workItem from="1633531693412" duration="11273000" />
       <workItem from="1633618654303" duration="7952000" />
-      <workItem from="1633964585244" duration="9653000" />
+      <workItem from="1633964585244" duration="10369000" />
+      <workItem from="1634135288207" duration="7733000" />
     </task>
     <task id="LOCAL-00001" summary="init n the first custom component ToDoItemsComponent">
       <created>1633536105745</created>
@@ -123,7 +122,14 @@
       <option name="project" value="LOCAL" />
       <updated>1633969697646</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="HttpClient in TodoItemsService, rxjs subscriber in TodoItemsComponents (get items from the remote fake WEB API)">
+      <created>1633975142074</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1633975142074</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -139,6 +145,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="init n the first custom component ToDoItemsComponent" />
@@ -147,7 +154,8 @@
     <MESSAGE value="ngModel (two-way binding)" />
     <MESSAGE value="data file" />
     <MESSAGE value="DI of TodoItemsService (get items from ts module)" />
-    <option name="LAST_COMMIT_MESSAGE" value="DI of TodoItemsService (get items from ts module)" />
+    <MESSAGE value="HttpClient in TodoItemsService, rxjs subscriber in TodoItemsComponents (get items from the remote fake WEB API)" />
+    <option name="LAST_COMMIT_MESSAGE" value="HttpClient in TodoItemsService, rxjs subscriber in TodoItemsComponents (get items from the remote fake WEB API)" />
   </component>
   <component name="WindowStateProjectService">
     <state x="711" y="355" width="559" height="403" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1633970984093">
@@ -158,9 +166,17 @@
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
     <state x="804" y="272" width="374" height="569" key="#com.intellij.ide.util.MemberChooser/72.27.1848.1053@72.27.1848.1053" timestamp="1633535685867" />
+    <state x="591" y="289" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1633975151423">
+      <screen x="72" y="27" width="1848" height="1053" />
+    </state>
+    <state x="591" y="289" width="800" height="535" key="Vcs.Push.Dialog.v2/72.27.1848.1053@72.27.1848.1053" timestamp="1633975151423" />
     <state x="660" y="252" key="run.anything.popup" timestamp="1633974485209">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
     <state x="660" y="252" key="run.anything.popup/72.27.1848.1053@72.27.1848.1053" timestamp="1633974485209" />
+    <state x="659" y="259" width="672" height="678" key="search.everywhere.popup" timestamp="1633975057583">
+      <screen x="72" y="27" width="1848" height="1053" />
+    </state>
+    <state x="659" y="259" width="672" height="678" key="search.everywhere.popup/72.27.1848.1053@72.27.1848.1053" timestamp="1633975057583" />
   </component>
 </project>

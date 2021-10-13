@@ -3,7 +3,9 @@ import {HttpClient} from "@angular/common/http";
 import {ToDoItem} from "../models/ToDoItem";
 import {ITEMS} from "../items";
 import {environment} from "../../environments/environment";
+import {CommonService} from './common.service'
 import {Observable} from "rxjs";
+import {delay} from "rxjs/operators";
 
 
 // по умолчанию создается один экземпляр этой службы,
@@ -17,7 +19,7 @@ export class TodoItemsService {
 
   private baseApiUrl
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, public commonService: CommonService) {
     /* switch (environment.mode) {
       case "demo":
         this.baseApiUrl = environment.demo.apiUrl
@@ -33,6 +35,11 @@ export class TodoItemsService {
   }
 
   getRemoteItems(): Observable<any> {
-    return this.http.get(`${this.baseApiUrl}/todos`);
+    this.commonService.setIsLoading(true)
+    setTimeout(() => {
+      this.commonService.setIsLoading(false)
+    }, 6000)
+    return this.http.get(`${this.baseApiUrl}/todos`)
+      .pipe(delay(6000));
   }
 }

@@ -14,3 +14,15 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   color: dimgray;
 }
+/* Custom */
+.preloader {
+  width: 250px;
+  height: 36px;
+  background-color: #ff0; /* Max Red, Max Green, Min Blue */
+  position: fixed;
+  top: calc(50% - 18px);
+  left: calc(50% - 125px);
+  font-size: 24px;
+  text-align: center;
+  padding: 5px;
+}

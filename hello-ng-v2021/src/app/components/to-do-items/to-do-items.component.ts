@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core'
 import {ToDoItem} from '../../models/ToDoItem'
 import {TodoItemsService} from "../../services/todo-items.service";
+import {CommonService} from "../../services/common.service"
 
 @Component({
   selector: 'app-to-do-items',
@@ -13,11 +14,20 @@ export class ToDoItemsComponent implements OnInit {
 
   toDoItems: ToDoItem[] = []
 
-  constructor(private service: TodoItemsService) { }
+  title: string = ''
+
+  isLoading: boolean
+
+  constructor(private itemsService: TodoItemsService) {
+    itemsService.commonService.getIsLoadingStream().subscribe(value => {
+      this.isLoading = value
+    })
+  }
 
   ngOnInit() {
+    setTimeout(() => this.title = 'Hello Angular 2021!', 5000)
     // this.toDoItems.push(...this.service.getItems())
-    this.service.getRemoteItems()
+    this.itemsService.getRemoteItems()
       .subscribe(
         data => {
           this.toDoItems.push(
