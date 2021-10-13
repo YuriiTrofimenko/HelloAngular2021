@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core'
-import {ToDoItem} from '../../models/ToDoItem'
-import {TodoItemsService} from "../../services/todo-items.service";
-import {CommonService} from "../../services/common.service"
+import {ToDoItem} from '../../../models/ToDoItem'
+import {TodoItemsService} from "../../../services/todo-items.service";
+import {CommonService} from "../../../services/common.service"
 
 @Component({
   selector: 'app-to-do-items',

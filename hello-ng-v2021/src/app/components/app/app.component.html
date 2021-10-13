@@ -1,6 +1,19 @@
-<!--<h1>{{ title }}</h1>
-<p>{{ 'Hello & Welcome to ' +
-' Angular Data binding '}}</p>
-<p>{{ 100 * 80 }}</p>
-<p>{{ getTitle() }}</p>-->
-<app-to-do-items></app-to-do-items>
+<!-- Todo error output -->
+<header>
+  <section>
+    <h1>{{ title }}</h1>
+  </section>
+  <nav>
+    <ul>
+      <li><a routerLink="/">Home</a></li>
+      <li><a routerLink="/tasks">Tasks</a></li>
+      <li><a routerLink="/about">About</a></li>
+    </ul>
+  </nav>
+</header>
+<main>
+  <router-outlet></router-outlet>
+</main>
+<footer>
+  <a href="https://1-dot-tyaastudio.appspot.com">&copy; 2021 - YuriiTrofimenko</a>
+</footer>
