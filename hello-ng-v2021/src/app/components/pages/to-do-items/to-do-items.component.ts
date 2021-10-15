@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core'
 import {ToDoItem} from '../../../models/ToDoItem'
 import {TodoItemsService} from "../../../services/todo-items.service";
-import {CommonService} from "../../../services/common.service"
 import {NavigationStart, Router} from "@angular/router";
 
 @Component({
@@ -79,6 +78,7 @@ export class ToDoItemsComponent implements OnInit {
 
   onItemClick (toDoItem: ToDoItem) {
     this.selectedItem = toDoItem
-    this.router.navigate(['tasks'], { fragment: toDoItem.id.toString() })
+    // this.router.navigate(['tasks'], { fragment: toDoItem.id.toString() })
+    window.location.hash = this.selectedItem.id.toString()
   }
 }

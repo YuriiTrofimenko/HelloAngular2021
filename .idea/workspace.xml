@@ -19,8 +19,11 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="91bec541-10b7-4aa0-aa40-175ab17fb00c" name="Default Changelist" comment="bootstrap styles">
+    <list default="true" id="91bec541-10b7-4aa0-aa40-175ab17fb00c" name="Default Changelist" comment="process selected item id url fragment">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hello-ng-v2021/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/hello-ng-v2021/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hello-ng-v2021/src/app/components/pages/to-do-items/to-do-items.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/hello-ng-v2021/src/app/components/pages/to-do-items/to-do-items.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hello-ng-v2021/src/app/components/pages/to-do-items/to-do-items.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/hello-ng-v2021/src/app/components/pages/to-do-items/to-do-items.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hello-ng-v2021/src/app/components/pages/to-do-items/to-do-items.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/hello-ng-v2021/src/app/components/pages/to-do-items/to-do-items.component.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -76,7 +79,7 @@
       <workItem from="1633618654303" duration="7952000" />
       <workItem from="1633964585244" duration="10369000" />
       <workItem from="1634135288207" duration="10899000" />
-      <workItem from="1634309153865" duration="9200000" />
+      <workItem from="1634309153865" duration="10995000" />
     </task>
     <task id="LOCAL-00001" summary="init n the first custom component ToDoItemsComponent">
       <created>1633536105745</created>
@@ -141,7 +144,14 @@
       <option name="project" value="LOCAL" />
       <updated>1634313266033</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="process selected item id url fragment">
+      <created>1634318895286</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1634318895286</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -169,7 +179,8 @@
     <MESSAGE value="HttpClient in TodoItemsService, rxjs subscriber in TodoItemsComponents (get items from the remote fake WEB API)" />
     <MESSAGE value="demo delay, preloader" />
     <MESSAGE value="bootstrap styles" />
-    <option name="LAST_COMMIT_MESSAGE" value="bootstrap styles" />
+    <MESSAGE value="process selected item id url fragment" />
+    <option name="LAST_COMMIT_MESSAGE" value="process selected item id url fragment" />
   </component>
   <component name="WindowStateProjectService">
     <state x="711" y="355" width="559" height="403" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1633970984093">

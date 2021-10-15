@@ -9,6 +9,7 @@ import {RouterModule, Routes} from "@angular/router";
 import { HomeComponent } from './components/pages/home/home.component';
 import { AboutComponent } from './components/pages/about/about.component';
 import { NotFoundComponent } from './components/pages/not-found/not-found.component';
+import { TaskEditorComponent } from './components/parts/to-do-items/task-editor/task-editor.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent, },
@@ -23,7 +24,8 @@ const routes: Routes = [
     ToDoItemsComponent,
     HomeComponent,
     AboutComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    TaskEditorComponent
   ],
     imports: [
         BrowserModule,
