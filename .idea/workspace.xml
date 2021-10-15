@@ -19,13 +19,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="91bec541-10b7-4aa0-aa40-175ab17fb00c" name="Default Changelist" comment="demo delay, preloader">
+    <list default="true" id="91bec541-10b7-4aa0-aa40-175ab17fb00c" name="Default Changelist" comment="bootstrap styles">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hello-ng-v2021/angular.json" beforeDir="false" afterPath="$PROJECT_DIR$/hello-ng-v2021/angular.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hello-ng-v2021/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/hello-ng-v2021/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hello-ng-v2021/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/hello-ng-v2021/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hello-ng-v2021/src/app/components/app/app.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/hello-ng-v2021/src/app/components/app/app.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hello-ng-v2021/src/app/components/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/hello-ng-v2021/src/app/components/app/app.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hello-ng-v2021/src/app/components/pages/to-do-items/to-do-items.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/hello-ng-v2021/src/app/components/pages/to-do-items/to-do-items.component.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,7 +76,7 @@
       <workItem from="1633618654303" duration="7952000" />
       <workItem from="1633964585244" duration="10369000" />
       <workItem from="1634135288207" duration="10899000" />
-      <workItem from="1634309153865" duration="3619000" />
+      <workItem from="1634309153865" duration="9200000" />
     </task>
     <task id="LOCAL-00001" summary="init n the first custom component ToDoItemsComponent">
       <created>1633536105745</created>
@@ -138,7 +134,14 @@
       <option name="project" value="LOCAL" />
       <updated>1634144786072</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="bootstrap styles">
+      <created>1634313266033</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1634313266033</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -165,7 +168,8 @@
     <MESSAGE value="DI of TodoItemsService (get items from ts module)" />
     <MESSAGE value="HttpClient in TodoItemsService, rxjs subscriber in TodoItemsComponents (get items from the remote fake WEB API)" />
     <MESSAGE value="demo delay, preloader" />
-    <option name="LAST_COMMIT_MESSAGE" value="demo delay, preloader" />
+    <MESSAGE value="bootstrap styles" />
+    <option name="LAST_COMMIT_MESSAGE" value="bootstrap styles" />
   </component>
   <component name="WindowStateProjectService">
     <state x="711" y="355" width="559" height="403" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1633970984093">
@@ -200,9 +204,9 @@
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
     <state x="660" y="252" key="run.anything.popup/72.27.1848.1053@72.27.1848.1053" timestamp="1633974485209" />
-    <state x="659" y="259" width="672" height="678" key="search.everywhere.popup" timestamp="1633975057583">
+    <state x="659" y="259" width="672" height="678" key="search.everywhere.popup" timestamp="1634316334432">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
-    <state x="659" y="259" width="672" height="678" key="search.everywhere.popup/72.27.1848.1053@72.27.1848.1053" timestamp="1633975057583" />
+    <state x="659" y="259" width="672" height="678" key="search.everywhere.popup/72.27.1848.1053@72.27.1848.1053" timestamp="1634316334432" />
   </component>
 </project>
