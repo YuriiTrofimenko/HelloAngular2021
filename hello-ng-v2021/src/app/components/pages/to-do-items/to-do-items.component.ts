@@ -23,6 +23,7 @@ export class ToDoItemsComponent implements OnInit {
     private router: Router,
     private itemsService: TodoItemsService
   ) {
+    this.selectedItem = itemsService.getCurrentItem()
     itemsService.commonService.getIsLoadingStream().subscribe(value => {
       this.isLoading = value
     })
@@ -37,9 +38,10 @@ export class ToDoItemsComponent implements OnInit {
         const selectedItem =
           this.toDoItems.find(item => item.id === selectedItemId)
         if (selectedItem) {
-          this.selectedItem = selectedItem
+          // this.selectedItem = selectedItem
+          this.itemsService.setCurrentItem(selectedItem)
         } else {
-          if (!this.selectedItem) {
+          if (!this.itemsService) {
             window.location.hash = ''
           } else {
             window.location.hash = this.selectedItem.id.toString()

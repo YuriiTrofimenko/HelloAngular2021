@@ -4,7 +4,7 @@
 type Mode = 'demo' | 'full'
 interface IOptions {
   apiUrl: string,
-  todoItemsUri: string
+  todoItemsEndpoint: string
 }
 interface IEnvironment {
   production: boolean,
@@ -17,11 +17,11 @@ export const environment: IEnvironment = {
   mode: 'full',
   demo: {
     apiUrl: 'https://jsonplaceholder.typicode.com',
-    todoItemsUri: '/todos'
+    todoItemsEndpoint: '/todos'
   },
   full: {
     apiUrl: 'http://localhost:4000',
-    todoItemsUri: '/api/items'
+    todoItemsEndpoint: '/api/items'
   }
 };
 

@@ -18,7 +18,8 @@ import {delay} from "rxjs/operators";
 export class TodoItemsService {
 
   private baseApiUrl
-  private todoItemsUri
+  private todoItemsEndpoint
+  private currentTodoItem: ToDoItem = null
 
   constructor(private http: HttpClient, public commonService: CommonService) {
     /* switch (environment.mode) {
@@ -30,7 +31,15 @@ export class TodoItemsService {
     } */
     const env = environment[environment.mode]
     this.baseApiUrl = env.apiUrl
-    this.todoItemsUri = env.todoItemsUri
+    this.todoItemsEndpoint = env.todoItemsEndpoint
+  }
+
+  setCurrentItem (item: ToDoItem) {
+    this.currentTodoItem = item
+  }
+
+  getCurrentItem () {
+    return this.currentTodoItem
   }
 
   getItems(): ToDoItem[] {
@@ -42,7 +51,25 @@ export class TodoItemsService {
     setTimeout(() => {
       this.commonService.setIsLoading(false)
     }, 6000)
-    return this.http.get(`${this.baseApiUrl}${this.todoItemsUri}`)
+    return this.http.get(`${this.baseApiUrl}${this.todoItemsEndpoint}`)
       .pipe(delay(6000));
+  }
+
+  updateRemoteItem(): void {
+    this.commonService.setIsLoading(true)
+    /* setTimeout(() => {
+      this.commonService.setIsLoading(false)
+    }, 6000) */
+    this.http.put(
+      `${this.baseApiUrl}${this.todoItemsEndpoint}/${this.currentTodoItem.id}`,
+      {
+        'title': this.currentTodoItem.name,
+        'done': this.currentTodoItem.isComplete
+      }
+    ).subscribe(
+      value => {},
+      error => console.log(error),
+      () => this.commonService.setIsLoading(false)
+    );
   }
 }
