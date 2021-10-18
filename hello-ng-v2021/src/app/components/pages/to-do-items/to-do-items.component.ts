@@ -63,8 +63,10 @@ export class ToDoItemsComponent implements OnInit {
       .subscribe(
         data => {
           this.toDoItems.push(
-            ...(data.map(
-              todoItem => new ToDoItem(todoItem.id, todoItem.title, todoItem.completed)
+            // ...(data.map(
+            ...(data.data.map(
+              // todoItem => new ToDoItem(todoItem.id, todoItem.title, todoItem.completed)
+              todoItem => new ToDoItem(todoItem.id, todoItem.title, todoItem.done)
             ))
           )
         },

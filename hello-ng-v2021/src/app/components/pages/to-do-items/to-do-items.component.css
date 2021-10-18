@@ -10,6 +10,7 @@
   padding: .3em;
   height: 250px;
   border-radius: 4px;
+  width: 600px;
 }
 .items_item:hover {
   color: #607D8B;

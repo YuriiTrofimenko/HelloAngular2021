@@ -1,15 +1,27 @@
 // This file can be replaced during build by using the `fileReplacements` array.
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
-
-export const environment = {
+type Mode = 'demo' | 'full'
+interface IOptions {
+  apiUrl: string,
+  todoItemsUri: string
+}
+interface IEnvironment {
+  production: boolean,
+  mode: Mode
+  demo: IOptions,
+  full: IOptions
+}
+export const environment: IEnvironment = {
   production: false,
-  mode: 'demo', // options: demo, full
+  mode: 'full',
   demo: {
-    apiUrl: 'https://jsonplaceholder.typicode.com'
+    apiUrl: 'https://jsonplaceholder.typicode.com',
+    todoItemsUri: '/todos'
   },
   full: {
-    apiUrl: 'http://localhost:4000'
+    apiUrl: 'http://localhost:4000',
+    todoItemsUri: '/api/items'
   }
 };
 

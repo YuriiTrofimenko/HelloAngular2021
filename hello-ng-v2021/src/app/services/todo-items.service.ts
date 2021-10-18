@@ -18,6 +18,7 @@ import {delay} from "rxjs/operators";
 export class TodoItemsService {
 
   private baseApiUrl
+  private todoItemsUri
 
   constructor(private http: HttpClient, public commonService: CommonService) {
     /* switch (environment.mode) {
@@ -27,7 +28,9 @@ export class TodoItemsService {
       case "full":
         this.baseApiUrl = environment.full.apiUrl
     } */
-    this.baseApiUrl = environment[environment.mode].apiUrl
+    const env = environment[environment.mode]
+    this.baseApiUrl = env.apiUrl
+    this.todoItemsUri = env.todoItemsUri
   }
 
   getItems(): ToDoItem[] {
@@ -39,7 +42,7 @@ export class TodoItemsService {
     setTimeout(() => {
       this.commonService.setIsLoading(false)
     }, 6000)
-    return this.http.get(`${this.baseApiUrl}/todos`)
+    return this.http.get(`${this.baseApiUrl}${this.todoItemsUri}`)
       .pipe(delay(6000));
   }
 }
