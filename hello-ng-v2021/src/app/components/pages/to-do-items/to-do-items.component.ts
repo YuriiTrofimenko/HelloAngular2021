@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core'
 import {ToDoItem} from '../../../models/ToDoItem'
 import {TodoItemsService} from "../../../services/todo-items.service";
 import {NavigationStart, Router} from "@angular/router";
+import {clone} from "../../../utils/CloneMaker";
 
 @Component({
   selector: 'app-to-do-items',
@@ -12,7 +13,7 @@ export class ToDoItemsComponent implements OnInit {
 
   selectedItem: ToDoItem = null
 
-  toDoItems: ToDoItem[] = []
+  toDoItems: ToDoItem[]
 
   title: string = ''
 
@@ -23,23 +24,29 @@ export class ToDoItemsComponent implements OnInit {
     private router: Router,
     private itemsService: TodoItemsService
   ) {
-    this.selectedItem = itemsService.getCurrentItem()
     itemsService.commonService.getIsLoadingStream().subscribe(value => {
       this.isLoading = value
     })
+    this.toDoItems = itemsService.remoteItems
   }
 
   processUrl () {
+    // если другая реакция на изменение адресной строки не происходит
+    // в этот момент
     if (this.allowUrlProcessing) {
+      // запрещаем начало другой реакции
       this.allowUrlProcessing = false
+      // изучаем хэш-область адресной строки,
+      // и если в ней появилось число -
+      // обрабатываем его как ИД выбранной задачи
       const hash = window.location.hash
       if (hash && this.toDoItems.length > 0) {
         const selectedItemId = Number(hash.replace('#', ''))
         const selectedItem =
           this.toDoItems.find(item => item.id === selectedItemId)
         if (selectedItem) {
-          // this.selectedItem = selectedItem
-          this.itemsService.setCurrentItem(selectedItem)
+          // установка текущей модели задачи
+          this.selectedItem = clone(selectedItem)
         } else {
           if (!this.itemsService) {
             window.location.hash = ''
@@ -53,36 +60,23 @@ export class ToDoItemsComponent implements OnInit {
   }
 
   ngOnInit() {
+    // когда меняется содержимое адресной строки ...
     this.router.events.forEach(event => {
       // console.log(event instanceof NavigationStart)
+      // когда изменение адресной строки только началось
       if (event instanceof NavigationStart) {
+        // реагируем на изменение адреса
         this.processUrl()
       }
     })
-    setTimeout(() => this.title = 'Hello Angular 2021!', 5000)
+    // setTimeout(() => this.title = 'Hello Angular 2021!', 5000)
+    this.title = 'Hello Angular 2021!'
     // this.toDoItems.push(...this.service.getItems())
-    this.itemsService.getRemoteItems()
-      .subscribe(
-        data => {
-          this.toDoItems.push(
-            // ...(data.map(
-            ...(data.data.map(
-              // todoItem => new ToDoItem(todoItem.id, todoItem.title, todoItem.completed)
-              todoItem => new ToDoItem(todoItem.id, todoItem.title, todoItem.done)
-            ))
-          )
-        },
-        error => {
-          console.log(error);
-        },
-        () => {
-          this.processUrl()
-        });
+    this.itemsService.getRemoteItems(this.processUrl.bind(this))
   }
 
   onItemClick (toDoItem: ToDoItem) {
-    this.selectedItem = toDoItem
-    // this.router.navigate(['tasks'], { fragment: toDoItem.id.toString() })
+    this.selectedItem = clone(toDoItem)
     window.location.hash = this.selectedItem.id.toString()
   }
 }

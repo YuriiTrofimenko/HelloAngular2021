@@ -18,6 +18,6 @@ export class TaskEditorComponent implements OnInit {
   }
 
   handleSaveButtonClick () {
-    this.todoItemsService.updateRemoteItem()
+    this.todoItemsService.updateRemoteItem(this.selectedItem)
   }
 }

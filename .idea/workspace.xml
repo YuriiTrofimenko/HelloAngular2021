@@ -20,12 +20,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="91bec541-10b7-4aa0-aa40-175ab17fb00c" name="Default Changelist" comment="switch to the local web application's rest api">
+      <change afterPath="$PROJECT_DIR$/hello-ng-v2021/src/app/utils/CloneMaker.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hello-ng-v2021/src/app/components/pages/to-do-items/to-do-items.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/hello-ng-v2021/src/app/components/pages/to-do-items/to-do-items.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hello-ng-v2021/src/app/components/parts/to-do-items/task-editor/task-editor.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/hello-ng-v2021/src/app/components/parts/to-do-items/task-editor/task-editor.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hello-ng-v2021/src/app/components/parts/to-do-items/task-editor/task-editor.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/hello-ng-v2021/src/app/components/parts/to-do-items/task-editor/task-editor.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hello-ng-v2021/src/app/services/todo-items.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/hello-ng-v2021/src/app/services/todo-items.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hello-ng-v2021/src/environments/environment.ts" beforeDir="false" afterPath="$PROJECT_DIR$/hello-ng-v2021/src/environments/environment.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,7 +81,8 @@
       <workItem from="1633964585244" duration="10369000" />
       <workItem from="1634135288207" duration="10899000" />
       <workItem from="1634309153865" duration="11782000" />
-      <workItem from="1634568027803" duration="5579000" />
+      <workItem from="1634568027803" duration="6174000" />
+      <workItem from="1634741719928" duration="9509000" />
     </task>
     <task id="LOCAL-00001" summary="init n the first custom component ToDoItemsComponent">
       <created>1633536105745</created>

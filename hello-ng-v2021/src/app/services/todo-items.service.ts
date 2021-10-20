@@ -4,7 +4,7 @@ import {ToDoItem} from "../models/ToDoItem";
 import {ITEMS} from "../items";
 import {environment} from "../../environments/environment";
 import {CommonService} from './common.service'
-import {Observable} from "rxjs";
+import {Observable, of} from "rxjs";
 import {delay} from "rxjs/operators";
 
 
@@ -19,7 +19,7 @@ export class TodoItemsService {
 
   private baseApiUrl
   private todoItemsEndpoint
-  private currentTodoItem: ToDoItem = null
+  private toDoItems: ToDoItem[] = []
 
   constructor(private http: HttpClient, public commonService: CommonService) {
     /* switch (environment.mode) {
@@ -34,42 +34,50 @@ export class TodoItemsService {
     this.todoItemsEndpoint = env.todoItemsEndpoint
   }
 
-  setCurrentItem (item: ToDoItem) {
-    this.currentTodoItem = item
-  }
-
-  getCurrentItem () {
-    return this.currentTodoItem
-  }
-
   getItems(): ToDoItem[] {
     return ITEMS
   }
 
-  getRemoteItems(): Observable<any> {
-    this.commonService.setIsLoading(true)
-    setTimeout(() => {
-      this.commonService.setIsLoading(false)
-    }, 6000)
-    return this.http.get(`${this.baseApiUrl}${this.todoItemsEndpoint}`)
-      .pipe(delay(6000));
+  get remoteItems () {
+    return this.toDoItems
   }
 
-  updateRemoteItem(): void {
+  getRemoteItems(callback: () => void = null) {
     this.commonService.setIsLoading(true)
-    /* setTimeout(() => {
-      this.commonService.setIsLoading(false)
-    }, 6000) */
+    this.http.get(`${this.baseApiUrl}${this.todoItemsEndpoint}`)
+      .subscribe(
+        (data: ToDoItem) => {
+          this.toDoItems.length = 0
+          this.toDoItems.push(
+            ...(data['data'].map(
+              todoItem => new ToDoItem(todoItem.id, todoItem.title, todoItem.done)
+            ))
+          )
+        },
+        error => {
+          console.log(error);
+        },
+        () => {
+          this.commonService.setIsLoading(false)
+          if (callback) callback()
+        })
+  }
+
+  updateRemoteItem(item: ToDoItem): void {
+    this.commonService.setIsLoading(true)
     this.http.put(
-      `${this.baseApiUrl}${this.todoItemsEndpoint}/${this.currentTodoItem.id}`,
+      `${this.baseApiUrl}${this.todoItemsEndpoint}/${item.id}`,
       {
-        'title': this.currentTodoItem.name,
-        'done': this.currentTodoItem.isComplete
+        'title': item.name,
+        'done': item.isComplete
       }
     ).subscribe(
       value => {},
       error => console.log(error),
-      () => this.commonService.setIsLoading(false)
+      () => {
+        this.commonService.setIsLoading(false)
+        this.getRemoteItems()
+      }
     );
   }
 }
