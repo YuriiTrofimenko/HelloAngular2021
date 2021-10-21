@@ -19,7 +19,7 @@ export class TodoItemsService {
 
   private baseApiUrl
   private todoItemsEndpoint
-  private toDoItems: ToDoItem[] = []
+  private readonly toDoItems: ToDoItem[] = []
 
   constructor(private http: HttpClient, public commonService: CommonService) {
     /* switch (environment.mode) {
@@ -46,24 +46,24 @@ export class TodoItemsService {
     this.commonService.setIsLoading(true)
     this.http.get(`${this.baseApiUrl}${this.todoItemsEndpoint}`)
       .subscribe(
-        (data: ToDoItem) => {
+        body => {
           this.toDoItems.length = 0
           this.toDoItems.push(
-            ...(data['data'].map(
+            ...(body['data'].map(
               todoItem => new ToDoItem(todoItem.id, todoItem.title, todoItem.done)
             ))
           )
-        },
-        error => {
-          console.log(error);
-        },
-        () => {
           this.commonService.setIsLoading(false)
           if (callback) callback()
-        })
+        },
+        error => {
+          console.log('error', error)
+          this.commonService.setIsLoading(false)
+        },
+        () => {})
   }
 
-  updateRemoteItem(item: ToDoItem): void {
+  updateRemoteItem(item: ToDoItem, callback: () => void = null): void {
     this.commonService.setIsLoading(true)
     this.http.put(
       `${this.baseApiUrl}${this.todoItemsEndpoint}/${item.id}`,
@@ -72,12 +72,16 @@ export class TodoItemsService {
         'done': item.isComplete
       }
     ).subscribe(
-      value => {},
-      error => console.log(error),
-      () => {
+      value => {
+        console.log('value', value)
         this.commonService.setIsLoading(false)
-        this.getRemoteItems()
-      }
+        this.getRemoteItems(callback)
+      },
+      error => {
+        console.log('error', error)
+        this.commonService.setIsLoading(false)
+      },
+      () => {}
     );
   }
 }

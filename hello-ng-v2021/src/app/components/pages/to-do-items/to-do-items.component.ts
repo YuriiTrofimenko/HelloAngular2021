@@ -30,6 +30,10 @@ export class ToDoItemsComponent implements OnInit {
     this.toDoItems = itemsService.remoteItems
   }
 
+  resetSelectedItem () {
+    this.selectedItem = null
+  }
+
   processUrl () {
     // если другая реакция на изменение адресной строки не происходит
     // в этот момент

@@ -1,6 +1,6 @@
 <h1>{{title}}</h1>
 <div>
-  <app-task-editor *ngIf="selectedItem" [selectedItem]="selectedItem"></app-task-editor>
+  <app-task-editor *ngIf="selectedItem" [selectedItem]="selectedItem" [resetSelectedItem]="resetSelectedItem.bind(this)"></app-task-editor>
   <strong *ngIf="toDoItems.length > 0" [className]="'todo-count'">
     {{toDoItems.length}} item{{toDoItems.length == 1 ? '' : 's'}}
   </strong>
