@@ -44,7 +44,13 @@ export class TodoItemsService {
 
   getRemoteItems(callback: () => void = null) {
     this.commonService.setIsLoading(true)
-    this.http.get(`${this.baseApiUrl}${this.todoItemsEndpoint}`)
+    this.http.get(
+      `${this.baseApiUrl}${this.todoItemsEndpoint}`,
+      {
+        headers: {
+          "credentials": "include"
+        }
+      })
       .subscribe(
         body => {
           this.toDoItems.length = 0
